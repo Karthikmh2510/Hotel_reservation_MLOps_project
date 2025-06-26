@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# MLflow and logs
+mlruns/
+logs/
+
+# Python packaging
+MLOPS_hotel_reservation.egg-info/
+
+# Secrets and credentials
+*.json
+
+# OS/mac files (optional)
+.DS_Store
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# Pycache
+__pycache__/
+*.py[cod]
