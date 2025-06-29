@@ -1,11 +1,11 @@
 from scipy.stats import randint, uniform
 
 LIGHTGBM_PARAMS = {
-    'n_estimators': randint(100, 300),
+    'n_estimators': randint(50, 150),
     'max_depth': randint(5, 50),
-    'learning_rate': uniform(0.01, 0.2),
-    'num_leaves': randint(20, 50),
-    'boosting_type': ['gbdt', 'dart', 'goss'],
+    'learning_rate': uniform(0.01, 0.1),
+    'num_leaves': randint(16, 64),
+    'boosting_type': ['gbdt', 'dart'],
     'force_col_wise': [True],
 }
 
