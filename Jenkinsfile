@@ -3,6 +3,8 @@ pipeline{
 
     environment {
         VENV_DIR = 'venv'
+        GCP_PROJECT = "geometric-team-461617-u4"
+        GCLOUD_PATH ="/var/jenkins_home/google-cloud-sdk/bin"
     }
 
     stages{
@@ -28,6 +30,29 @@ pipeline{
                     }
             }
         }
+
+        stage('Building and pushing Docker image to GCR'){
+            steps{
+                withCredientials([file(credentialsId : 'gcp-key', variable : 'GOOGLE_APPLICATION_CREDENTIALS')]){
+                    script{
+                        echo 'Building and pushing Docker image to GCR.....'
+                        sh '''
+                        . ${VENV_DIR}/bin/activate
+                        export PATH=$PATH:$(GCLOUD_PATH)
+
+                        gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+                        gcloud config set project ${GCP_PROJECT}
+
+                        gcloud auth configure-docker --quite
+
+                        docker build -t gcr.io/${GCP_PROJECT}/hotel-reservation:latest .
+                        docker push gcr.io/${GCP_PROJECT}/hotel-reservation:latest
+                        '''
+                    }
+                }
+            }
+        }
+
     }
 }
 
