@@ -51,7 +51,9 @@ class ModelTrainer:
     def train_lgbm(self, X_train, y_train,):
         try:
             logger.info("Initializing LightGBM model...")
-            lgbm_model = lgb.LGBMClassifier(random_state=self.random_search_params['random_state'])
+
+            lgbm_model = lgb.LGBMClassifier(random_state=self.random_search_params['random_state'],
+                                            force_col_wise=True)
 
             logger.info("Hyperparamater Tuning...")
             random_search = RandomizedSearchCV(
