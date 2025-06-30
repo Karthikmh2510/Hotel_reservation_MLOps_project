@@ -179,4 +179,4 @@ Concepts around scalable CI/CD, Kubernetes workflows, and observability learned 
 
 ## License
 
-This repository is released under the MIT License. Kaggle data retains its original CC BY-NC 4.0 terms; please ensure non-commercial use when training or deploying derivative models.
+This repository is released under the [MIT License](LICENSE). Kaggle data retains its original CC BY-NC 4.0 terms; 
