@@ -28,7 +28,8 @@ Predict booking **cancellations** in real time while showcasing an end‑to‑en
 6. [Monitoring & Maintenance](#monitoring--maintenance)
 7. [Local Reproducibility Checklist](#local-reproducibility-checklist)
 8. [Road‑Map](#road-map)
-9. [License](#license)
+9. [Acknowledgements](#acknowledgements)
+10. [License](#license)
 
 ---
 
